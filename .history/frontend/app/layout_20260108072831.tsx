@@ -2,10 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Cairo } from 'next/font/google';
 import { clsx } from 'clsx';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const cairo = Cairo({
-	subsets: ['arabic', 'latin'],
+	subsets: ['arabic'],
 	weight: ['400', '600', '700', '800'],
 	variable: '--font-cairo',
 	display: 'swap'
@@ -21,9 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="ar" dir="rtl" suppressHydrationWarning>
 			<body className={clsx(cairo.variable, 'min-h-dvh bg-white')}>
-				<LanguageProvider>
-					{children}
-				</LanguageProvider>
+				{children}
 			</body>
 		</html>
 	);

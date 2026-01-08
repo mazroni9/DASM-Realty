@@ -1,13 +1,8 @@
-'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 export function Footer() {
-	const { language, t } = useLanguage();
-	
 	return (
 		<footer id="cta" className="bg-dasm-blue text-white">
 			<div className="container container-padding py-12">
@@ -16,15 +11,18 @@ export function Footer() {
 						<div className="flex items-center gap-3">
 							<Image src="/logo-dasm-inv.svg" alt="DASM" width={36} height={36} />
 							<div>
-								<div className="font-extrabold text-lg">{t('brand')}</div>
-								<div className="text-sm text-white/70">{t('brandEn')}</div>
+								<div className="font-extrabold text-lg">داسم للعقار</div>
+								<div className="text-sm text-white/70">DASM Realty</div>
 							</div>
 						</div>
 						<p className="text-white/80 leading-7 text-sm">
-							{t('partOfEcosystem')}
+							جزء من منظومة DASM‑e الرقمية
+						</p>
+						<p className="text-white/70 text-xs italic">
+							Part of the DASM‑e digital ecosystem
 						</p>
 						<p className="text-white/60 text-xs mt-4">
-							© {new Date().getFullYear()} DASM Realty. {language === 'ar' ? 'جميع الحقوق محفوظة.' : 'All rights reserved.'}
+							© {new Date().getFullYear()} DASM Realty. جميع الحقوق محفوظة.
 						</p>
 					</div>
 					<div>
