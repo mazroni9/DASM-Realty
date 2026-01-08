@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS variables */
+/* CSS Variables - DASM Design System */
 :root {
-	--bg-muted: #F7FAFC; /* Light gray from design */
+	--bg-muted: #F7F9FC;
+	--bg-card: #FFFFFF;
+	--text-primary: #0F172A;
+	--text-secondary: #475569;
+	--text-muted: #64748B;
+	--border-default: #E5E7EB;
+	--border-subtle: #F1F5F9;
+	--primary-navy: #0B3A63;
+	--primary-green: #1FA971;
 }
 
 html {
@@ -12,33 +20,41 @@ html {
 }
 
 body {
-	@apply bg-white text-dasm-ink antialiased;
+	@apply bg-light-bg-main text-light-text-primary antialiased;
+	font-family: var(--font-ibm-plex-arabic), var(--font-inter), sans-serif;
+}
+
+[dir="ltr"] body {
+	font-family: var(--font-inter), var(--font-ibm-plex-arabic), sans-serif;
 }
 
 .container-padding {
-	@apply px-4 sm:px-6 lg:px-8;
+	@apply px-6 md:px-8 lg:px-12;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .btn {
-	@apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition-colors;
+	@apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-sm transition-all duration-normal;
 }
+
 .btn-primary {
-	@apply bg-dasm-blue text-white hover:bg-dasm-blue-light;
+	@apply bg-dasm-navy text-light-text-inverse hover:bg-dasm-navy/90 shadow-md-light hover:shadow-md-light;
 }
+
 .btn-outline {
-	@apply border border-dasm-blue text-dasm-blue hover:bg-dasm-blue hover:text-white;
+	@apply border-2 border-dasm-navy text-dasm-navy bg-transparent hover:bg-dasm-navy/5;
 }
 
 .badge {
-	@apply inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm text-dasm-blue shadow-card;
+	@apply inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-light-bg-section text-light-text-secondary text-xs font-medium;
 }
 
 .step-connector {
-	background-image: linear-gradient(to left, rgba(15, 43, 70, 0.15) 40%, rgba(255,255,255,0) 0%);
+	background-image: linear-gradient(to left, rgba(31, 169, 113, 0.15) 40%, rgba(255,255,255,0) 0%);
 	background-position: top;
 	background-size: 10px 2px;
 	background-repeat: repeat-x;
 	height: 2px;
 }
-
-

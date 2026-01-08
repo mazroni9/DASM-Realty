@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="ar" dir="rtl" suppressHydrationWarning>
-			<body className={clsx(ibmPlexArabic.variable, inter.variable, 'min-h-dvh bg-light-bg-main')}>
+			<body className={clsx(cairo.variable, 'min-h-dvh bg-white')}>
 				<LanguageProvider>
 					{children}
 				</LanguageProvider>
