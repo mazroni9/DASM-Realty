@@ -18,8 +18,8 @@ const config: Config = {
 		extend: {
 			colors: {
 				// Primary Colors (DASM Brand) - From Figma Tokens
-				'dasm-navy': 'var(--navy)',
-				'dasm-green': 'var(--green)',
+				'dasm-navy': '#0B3A63', // var(--navy) - use directly for Tailwind
+				'dasm-green': '#1FA971', // var(--green) - use directly for Tailwind
 				// Legacy support (will map to new colors)
 				'dasm-blue': '#0B3A63',
 				'dasm-gold': '#F2C14E',
