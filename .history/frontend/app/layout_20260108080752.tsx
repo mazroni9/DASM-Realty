@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { IBM_Plex_Sans_Arabic, Inter } from 'next/font/google';
 import { clsx } from 'clsx';
 import { LanguageProvider } from '@/contexts/LanguageContext';
-import { ThemeProvider } from '@/contexts/ThemeContext';
 
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
 	subsets: ['arabic'],
@@ -28,12 +27,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="ar" dir="rtl" suppressHydrationWarning>
-			<body className={clsx(ibmPlexArabic.variable, inter.variable, 'min-h-dvh bg-light-bg-main dark:bg-dark-bg-main')}>
-				<ThemeProvider>
-					<LanguageProvider>
-						{children}
-					</LanguageProvider>
-				</ThemeProvider>
+			<body className={clsx(ibmPlexArabic.variable, inter.variable, 'min-h-dvh bg-light-bg-main')}>
+				<LanguageProvider>
+					{children}
+				</LanguageProvider>
 			</body>
 		</html>
 	);

@@ -92,7 +92,8 @@ const config: Config = {
 			boxShadow: {
 				card: '0 4px 12px rgba(0,0,0,0.08)',
 				'sm-light': '0 1px 2px rgba(0,0,0,0.05)',
-				'md-light': '0 4px 12px rgba(0,0,0,0.08)'
+				'md-light': '0 4px 12px rgba(0,0,0,0.08)',
+				'none': 'none'
 			},
 			backgroundImage: {
 				'hero-radial':

@@ -9,21 +9,21 @@ export function Hero() {
 	const { language, t } = useLanguage();
 	
 	return (
-		<section className="relative bg-hero-radial">
+		<section className="relative bg-hero-radial dark:bg-dark-bg-main">
 			<div className="container container-padding grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 lg:py-20">
 				<div className="order-2 lg:order-1">
 					<div className="mb-2">
-						<h1 className="text-2xl sm:text-3xl font-bold text-dasm-blue">
+						<h1 className="text-2xl sm:text-3xl font-bold text-dasm-navy dark:text-dark-text-primary">
 							{t('brand')} {language === 'ar' && `| ${t('brandEn')}`}
 						</h1>
 						{language === 'ar' && (
-							<p className="text-sm text-slate-500 mt-1">{t('taglineEn')}</p>
+							<p className="text-sm text-light-text-muted dark:text-dark-text-muted mt-1">{t('taglineEn')}</p>
 						)}
 					</div>
-					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dasm-blue leading-tight mt-4">
+					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dasm-navy dark:text-dark-text-primary leading-tight mt-4">
 						{t('tagline')}
 					</h2>
-					<p className="mt-4 text-slate-600 leading-8 text-lg">
+					<p className="mt-4 text-light-text-secondary dark:text-dark-text-secondary leading-8 text-lg">
 						{t('description')}
 					</p>
 					<div className="mt-6 flex flex-wrap gap-3">
@@ -34,18 +34,18 @@ export function Hero() {
 							{t('ctaSecondary')}
 						</Link>
 					</div>
-					<div className="mt-6 flex flex-wrap gap-4 text-sm text-slate-600">
+					<div className="mt-6 flex flex-wrap gap-4 text-sm text-light-text-secondary dark:text-dark-text-secondary">
 						<div className="badge">
 							<ShieldCheck className="h-4 w-4 text-dasm-green" />
-							ثقة وشفافية
+							{language === 'ar' ? 'ثقة وشفافية' : 'Trust & Transparency'}
 						</div>
 						<div className="badge">
-							<Building2 className="h-4 w-4 text-dasm-blue" />
-							عقارات متنوعة
+							<Building2 className="h-4 w-4 text-dasm-navy dark:text-dasm-green" />
+							{language === 'ar' ? 'عقارات متنوعة' : 'Diverse Properties'}
 						</div>
 						<div className="badge">
 							<Network className="h-4 w-4 text-dasm-green" />
-							تكامل مع محرك المزادات
+							{language === 'ar' ? 'تكامل مع محرك المزادات' : 'Auction Engine Integration'}
 						</div>
 					</div>
 				</div>

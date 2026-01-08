@@ -4,6 +4,7 @@
 
 /* CSS Variables - DASM Design System */
 :root {
+	/* Light Mode Colors */
 	--bg-muted: #F7F9FC;
 	--bg-card: #FFFFFF;
 	--text-primary: #0F172A;
@@ -15,13 +16,27 @@
 	--primary-green: #1FA971;
 }
 
+.dark {
+	/* Dark Mode Colors */
+	--bg-muted: #111827;
+	--bg-card: #0F172A;
+	--text-primary: #E5E7EB;
+	--text-secondary: #CBD5E1;
+	--text-muted: #9CA3AF;
+	--border-default: #1F2937;
+	--border-subtle: #273449;
+	--primary-navy: #0B3A63;
+	--primary-green: #1FA971;
+}
+
 html {
 	direction: rtl;
 }
 
 body {
-	@apply bg-light-bg-main text-light-text-primary antialiased;
+	@apply bg-light-bg-main dark:bg-dark-bg-main text-light-text-primary dark:text-dark-text-primary antialiased;
 	font-family: var(--font-ibm-plex-arabic), var(--font-inter), sans-serif;
+	transition: background-color 250ms ease, color 250ms ease;
 }
 
 [dir="ltr"] body {
@@ -35,20 +50,30 @@ body {
 	margin-right: auto;
 }
 
+/* Buttons */
 .btn {
 	@apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold text-sm transition-all duration-normal;
 }
 
 .btn-primary {
-	@apply bg-dasm-navy text-light-text-inverse hover:bg-dasm-navy/90 shadow-md-light hover:shadow-md-light;
+	@apply bg-dasm-navy text-light-text-inverse hover:bg-dasm-navy/90;
+	@apply dark:bg-dasm-navy dark:text-light-text-inverse dark:hover:bg-dasm-navy/90;
+	@apply shadow-md-light dark:shadow-none;
 }
 
 .btn-outline {
 	@apply border-2 border-dasm-navy text-dasm-navy bg-transparent hover:bg-dasm-navy/5;
+	@apply dark:border-dasm-navy dark:text-dark-text-primary dark:hover:bg-dasm-navy/10;
+}
+
+.btn-green {
+	@apply bg-dasm-green text-light-text-inverse hover:bg-dasm-green/90;
+	@apply dark:bg-dasm-green dark:text-light-text-inverse dark:hover:bg-dasm-green/90;
+	@apply shadow-md-light dark:shadow-none;
 }
 
 .badge {
-	@apply inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-light-bg-section text-light-text-secondary text-xs font-medium;
+	@apply inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-light-bg-section dark:bg-dark-bg-section text-light-text-secondary dark:text-dark-text-secondary text-xs font-medium;
 }
 
 .step-connector {
@@ -57,4 +82,15 @@ body {
 	background-size: 10px 2px;
 	background-repeat: repeat-x;
 	height: 2px;
+}
+
+.dark .step-connector {
+	background-image: linear-gradient(to left, rgba(31, 169, 113, 0.25) 40%, rgba(15, 18, 32, 0) 0%);
+}
+
+/* Remove shadows in dark mode */
+.dark .shadow-card,
+.dark .shadow-md-light,
+.dark .shadow-sm-light {
+	box-shadow: none;
 }

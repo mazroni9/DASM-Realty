@@ -43,22 +43,22 @@ export function Features() {
 	const currentFeatures = tab === 'office' ? officeFeatures : buyerFeatures;
 	
 	return (
-		<section id="features" className="py-14 lg:py-20 bg-[var(--bg-muted)]">
+		<section id="features" className="py-14 lg:py-20 bg-light-bg-section dark:bg-dark-bg-section">
 			<div className="container container-padding">
 				<div className="flex flex-wrap items-center justify-between gap-4 mb-8">
 					<div className="flex items-center gap-3">
-						<Building className="h-6 w-6 text-dasm-blue" />
-						<h2 className="text-2xl sm:text-3xl font-extrabold text-dasm-blue">
+						<Building className="h-6 w-6 text-dasm-navy dark:text-dasm-green" />
+						<h2 className="text-2xl sm:text-3xl font-extrabold text-dasm-navy dark:text-dark-text-primary">
 							{tab === 'office' ? t('forOffices') : t('forBuyers')}
 						</h2>
 					</div>
-					<div className="inline-flex rounded-lg border p-1 bg-white shadow-sm">
+					<div className="inline-flex rounded-lg border border-light-border-default dark:border-dark-border-default p-1 bg-light-bg-card dark:bg-dark-bg-card">
 						<button
 							onClick={() => setTab('office')}
 							className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors ${
 								tab === 'office'
-									? 'bg-dasm-blue text-white'
-									: 'text-dasm-blue hover:bg-slate-50'
+									? 'bg-dasm-navy text-light-text-inverse'
+									: 'text-dasm-navy dark:text-dark-text-primary hover:bg-light-bg-section dark:hover:bg-dark-bg-section'
 							}`}
 						>
 							{t('officeTab')}
@@ -67,8 +67,8 @@ export function Features() {
 							onClick={() => setTab('buyer')}
 							className={`px-4 py-2 rounded-md text-sm font-semibold transition-colors ${
 								tab === 'buyer'
-									? 'bg-dasm-blue text-white'
-									: 'text-dasm-blue hover:bg-slate-50'
+									? 'bg-dasm-navy text-light-text-inverse'
+									: 'text-dasm-navy dark:text-dark-text-primary hover:bg-light-bg-section dark:hover:bg-dark-bg-section'
 							}`}
 						>
 							{t('buyerTab')}
@@ -77,20 +77,20 @@ export function Features() {
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-					<div className={`rounded-2xl p-6 shadow-card transition-all ${
-						tab === 'office' ? 'bg-white' : 'bg-slate-50'
+					<div className={`rounded-lg p-6 transition-all border border-light-border-subtle dark:border-dark-border-subtle ${
+						tab === 'office' ? 'bg-light-bg-card dark:bg-dark-bg-card shadow-card dark:shadow-none' : 'bg-light-bg-section dark:bg-dark-bg-section'
 					}`}>
 						<div className="flex items-center gap-3">
 							{tab === 'office' ? (
-								<Building className="h-6 w-6 text-dasm-blue" />
+								<Building className="h-6 w-6 text-dasm-navy dark:text-dasm-green" />
 							) : (
-								<Users2 className="h-6 w-6 text-dasm-blue" />
+								<Users2 className="h-6 w-6 text-dasm-navy dark:text-dasm-green" />
 							)}
-							<h3 className="text-lg font-bold text-dasm-blue">
+							<h3 className="text-lg font-bold text-dasm-navy dark:text-dark-text-primary">
 								{tab === 'office' ? t('forOffices') : t('forBuyers')}
 							</h3>
 						</div>
-						<ul className="mt-4 space-y-3 text-slate-700">
+						<ul className="mt-4 space-y-3 text-light-text-secondary dark:text-dark-text-secondary">
 							{currentFeatures[language].map((feature, idx) => (
 								<li key={idx} className="flex items-start gap-2">
 									<CheckCircle2 className="h-4 w-4 text-dasm-green flex-shrink-0 mt-0.5" />
@@ -99,20 +99,20 @@ export function Features() {
 							))}
 						</ul>
 					</div>
-					<div className={`rounded-2xl p-6 shadow-card transition-all ${
-						tab === 'buyer' ? 'bg-white' : 'bg-slate-50'
+					<div className={`rounded-lg p-6 transition-all border border-light-border-subtle dark:border-dark-border-subtle ${
+						tab === 'buyer' ? 'bg-light-bg-card dark:bg-dark-bg-card shadow-card dark:shadow-none' : 'bg-light-bg-section dark:bg-dark-bg-section'
 					}`}>
 						<div className="flex items-center gap-3">
 							{tab === 'buyer' ? (
-								<Users2 className="h-6 w-6 text-dasm-blue" />
+								<Users2 className="h-6 w-6 text-dasm-navy dark:text-dasm-green" />
 							) : (
-								<Building className="h-6 w-6 text-dasm-blue" />
+								<Building className="h-6 w-6 text-dasm-navy dark:text-dasm-green" />
 							)}
-							<h3 className="text-lg font-bold text-dasm-blue">
+							<h3 className="text-lg font-bold text-dasm-navy dark:text-dark-text-primary">
 								{tab === 'buyer' ? t('forBuyers') : t('forOffices')}
 							</h3>
 						</div>
-						<ul className="mt-4 space-y-3 text-slate-700">
+						<ul className="mt-4 space-y-3 text-light-text-secondary dark:text-dark-text-secondary">
 							{(tab === 'buyer' ? buyerFeatures : officeFeatures)[language].map((feature, idx) => (
 								<li key={idx} className="flex items-start gap-2">
 									<CheckCircle2 className="h-4 w-4 text-dasm-green flex-shrink-0 mt-0.5" />
