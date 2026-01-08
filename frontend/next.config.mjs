@@ -7,12 +7,8 @@ const nextConfig = {
 		remotePatterns: [
 			{ protocol: 'https', hostname: 'res.cloudinary.com' }
 		]
-	},
-	i18n: {
-		locales: ['ar'],
-		defaultLocale: 'ar',
-		localeDetection: false
 	}
+	// Note: i18n removed - App Router handles RTL via layout.tsx (dir="rtl")
 };
 
 export default nextConfig;
