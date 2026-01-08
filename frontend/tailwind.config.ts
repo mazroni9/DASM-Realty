@@ -18,16 +18,16 @@ const config: Config = {
 		extend: {
 			colors: {
 				'dasm-blue': {
-					DEFAULT: '#0F2B46', // deep navy from design
-					light: '#173a5f',
+					DEFAULT: '#1A365D', // dark blue from design
+					light: '#2D4A6B',
 					soft: '#1c426b'
 				},
 				'dasm-green': {
-					DEFAULT: '#1DBA6A', // vibrant green
-					dark: '#129158'
+					DEFAULT: '#38A169', // vibrant green from design
+					dark: '#2F855A'
 				},
 				'dasm-gold': '#F2C14E',
-				'dasm-ink': '#0b1b2d'
+				'dasm-ink': '#4A5568'
 			},
 			fontFamily: {
 				sans: ['var(--font-cairo)']

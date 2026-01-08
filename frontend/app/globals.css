@@ -4,7 +4,7 @@
 
 /* CSS variables */
 :root {
-	--bg-muted: #f7f9fb;
+	--bg-muted: #F7FAFC; /* Light gray from design */
 }
 
 html {

@@ -14,9 +14,11 @@ export function Navbar() {
 						className="h-9 w-9"
 						priority
 					/>
-					<div className="text-dasm-blue font-extrabold text-lg leading-none">
-						DASM
-						<span className="text-dasm-green"> Realty</span>
+					<div className="flex flex-col">
+						<div className="text-dasm-blue font-extrabold text-lg leading-none">
+							DASM
+						</div>
+						<div className="text-xs text-slate-600 mt-0.5">داسم للعقار</div>
 					</div>
 				</div>
 				<nav className="flex items-center gap-3">
