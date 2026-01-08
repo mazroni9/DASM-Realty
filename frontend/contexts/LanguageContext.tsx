@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import type { Language } from '@/lib/translations';
+import { translations, type Language } from '@/lib/translations';
 
 type LanguageContextType = {
 	language: Language;
@@ -37,7 +37,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 	}, [language]);
 
 	const t = (key: keyof typeof translations.ar): string => {
-		return translations[language][key] || '';
+		const trans = translations[language];
+		return (trans[key] as string) || '';
 	};
 
 	return (
