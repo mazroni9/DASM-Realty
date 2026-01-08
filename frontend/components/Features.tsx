@@ -1,3 +1,5 @@
+'use client';
+
 import { Building, Users2, ShieldCheck, Sparkles, Wallet, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
 
