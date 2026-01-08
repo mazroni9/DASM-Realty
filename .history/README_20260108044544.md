@@ -1,0 +1,43 @@
+## DASM Realty — Monorepo (Next.js frontend + Laravel API backend)
+
+This workspace contains:
+- `frontend/` — Next.js 14 (App Router) + Tailwind CSS landing page (Arabic/RTL), ready for Vercel.
+- `backend/` — Laravel API setup guide and production-ready stubs (PostgreSQL + Cloudinary + CORS + Leads).
+
+Use the attached landing design as the source of truth (layout, colors, typography, icons).
+
+### Quick start
+
+1) Frontend
+```bash
+cd frontend
+npm i
+npm run dev
+```
+Open http://localhost:3000
+
+2) Backend (create real Laravel app, then apply stubs)
+```bash
+cd backend
+# Create Laravel app into ./laravel (or use your preferred path)
+composer create-project laravel/laravel laravel "^11.0"
+cd laravel
+composer require cloudinary-labs/cloudinary-laravel
+php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider"
+# copy and adjust env (we ship it as env.example.stub to avoid tooling ignores)
+cp ../stubs/env.example.stub .env
+php artisan key:generate
+
+# Configure Postgres in .env, then:
+php artisan migrate
+php artisan serve
+```
+Laravel API will serve at http://127.0.0.1:8000 (configure the frontend `.env.local` → `NEXT_PUBLIC_API_BASE_URL`).
+
+### Deploy
+- Frontend: Vercel (zero-config for Next.js). Set `NEXT_PUBLIC_API_BASE_URL` to your API endpoint.
+- Backend: Any Laravel-friendly host (Laravel Forge, Render, Fly, etc.). Set Postgres + Cloudinary env vars.
+
+See `backend/README.md` and `frontend/README.md` for detailed steps. 
+
+

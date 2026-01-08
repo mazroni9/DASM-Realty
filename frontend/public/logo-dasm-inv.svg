@@ -1,0 +1,9 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="16" fill="#0F2B46"/>
+  <g transform="translate(18,20)">
+    <path d="M16 64V16L40 0V64H16Z" fill="#1DBA6A"/>
+    <path d="M42 64V10L66 20V64H42Z" fill="#FFFFFF"/>
+    <path d="M0 64L0 36L14 30V64H0Z" fill="#1DBA6A"/>
+  </g>
+  <text x="60" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">DASM</text>
+</svg>

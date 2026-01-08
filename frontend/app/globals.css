@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS variables */
+:root {
+	--bg-muted: #f7f9fb;
+}
+
+html {
+	direction: rtl;
+}
+
+body {
+	@apply bg-white text-dasm-ink antialiased;
+}
+
+.container-padding {
+	@apply px-4 sm:px-6 lg:px-8;
+}
+
+.btn {
+	@apply inline-flex items-center justify-center rounded-lg px-5 py-3 font-semibold transition-colors;
+}
+.btn-primary {
+	@apply bg-dasm-blue text-white hover:bg-dasm-blue-light;
+}
+.btn-outline {
+	@apply border border-dasm-blue text-dasm-blue hover:bg-dasm-blue hover:text-white;
+}
+
+.badge {
+	@apply inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-sm text-dasm-blue shadow-card;
+}
+
+.step-connector {
+	background-image: linear-gradient(to left, rgba(15, 43, 70, 0.15) 40%, rgba(255,255,255,0) 0%);
+	background-position: top;
+	background-size: 10px 2px;
+	background-repeat: repeat-x;
+	height: 2px;
+}
+
+

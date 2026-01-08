@@ -1,0 +1,16 @@
+node_modules
+.next
+.vercel
+dist
+build
+*.log
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+/frontend/.env.local
+/backend/laravel/.env
+/backend/laravel/vendor
+.DS_Store
+
+
