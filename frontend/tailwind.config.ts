@@ -72,9 +72,9 @@ const config: Config = {
 				bold: '700'
 			},
 			lineHeight: {
-				tight: 1.2,
-				normal: 1.6,
-				relaxed: 1.8
+				tight: '1.2',
+				normal: '1.6',
+				relaxed: '1.8'
 			},
 			borderRadius: {
 				sm: '6px',
