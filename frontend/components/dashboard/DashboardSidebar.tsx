@@ -37,9 +37,10 @@ export function DashboardSidebar() {
 	const { language } = useLanguage();
 	const pathname = usePathname();
 	const items = menuItems[language];
+	const isRTL = language === 'ar';
 
 	return (
-		<aside className="fixed right-0 top-0 h-screen w-64 bg-light-bg-card dark:bg-dark-bg-card border-l border-light-border-default dark:border-dark-border-default z-40">
+		<aside className={`fixed ${isRTL ? 'right-0 border-l' : 'left-0 border-r'} top-0 h-screen w-64 bg-light-bg-card dark:bg-dark-bg-card border-light-border-default dark:border-dark-border-default z-40`}>
 			<div className="flex flex-col h-full">
 				{/* Logo */}
 				<div className="p-6 border-b border-light-border-default dark:border-dark-border-default">
