@@ -94,10 +94,13 @@ export function Features() {
 							</h3>
 						</div>
 						<ul className="mt-4 space-y-3 text-slate-700">
-							{(tab === 'buyer' ? buyerFeatures : officeFeatures).map((f) => (
-								<li key={f} className="flex items-center gap-2">
-									<CheckCircle2 className="h-4 w-4 text-dasm-green flex-shrink-0" />
-									<span>{f}</span>
+							{(tab === 'buyer' ? buyerFeatures : officeFeatures).map((f, idx) => (
+								<li key={idx} className="flex items-start gap-2">
+									<CheckCircle2 className="h-4 w-4 text-dasm-green flex-shrink-0 mt-0.5" />
+									<div>
+										<span className="block">{f.ar}</span>
+										<span className="text-xs text-slate-500 italic">{f.en}</span>
+									</div>
 								</li>
 							))}
 						</ul>
