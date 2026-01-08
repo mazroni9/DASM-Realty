@@ -2,31 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Variables - DASM Design System */
+/* Import Design Tokens from Figma */
+@import '../styles/tokens.css';
+
+/* Legacy CSS Variables - Mapped to tokens for backward compatibility */
 :root {
-	/* Light Mode Colors */
-	--bg-muted: #F7F9FC;
-	--bg-card: #FFFFFF;
-	--text-primary: #0F172A;
-	--text-secondary: #475569;
-	--text-muted: #64748B;
-	--border-default: #E5E7EB;
-	--border-subtle: #F1F5F9;
-	--primary-navy: #0B3A63;
-	--primary-green: #1FA971;
+	--bg-muted: var(--bg-section);
+	--bg-card: var(--bg-card);
+	--text-primary: var(--text-main);
+	--text-secondary: var(--text-secondary);
+	--text-muted: var(--text-muted);
+	--border-default: var(--border-default);
+	--border-subtle: var(--border-subtle);
+	--primary-navy: var(--navy);
+	--primary-green: var(--green);
 }
 
 .dark {
-	/* Dark Mode Colors */
-	--bg-muted: #111827;
-	--bg-card: #0F172A;
-	--text-primary: #E5E7EB;
-	--text-secondary: #CBD5E1;
-	--text-muted: #9CA3AF;
-	--border-default: #1F2937;
-	--border-subtle: #273449;
-	--primary-navy: #0B3A63;
-	--primary-green: #1FA971;
+	--bg-muted: var(--bg-section);
+	--bg-card: var(--bg-card);
+	--text-primary: var(--text-main);
+	--text-secondary: var(--text-secondary);
+	--text-muted: var(--text-muted);
+	--border-default: var(--border-default);
+	--border-subtle: var(--border-subtle);
+	--primary-navy: var(--navy);
+	--primary-green: var(--green);
 }
 
 html {

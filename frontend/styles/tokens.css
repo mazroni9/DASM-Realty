@@ -1,0 +1,81 @@
+/* DASM Design Tokens - Figma → Code Bridge */
+
+:root {
+	/* Brand Colors */
+	--navy: #0B3A63;
+	--green: #1FA971;
+
+	/* Light Theme */
+	--bg-main: #ffffff;
+	--bg-section: #f7f9fc;
+	--bg-card: #ffffff;
+	
+	--text-main: #0f172a;
+	--text-secondary: #475569;
+	--text-muted: #64748b;
+	--text-inverse: #ffffff;
+	
+	--border-default: #e5e7eb;
+	--border-subtle: #f1f5f9;
+	
+	--status-success: #1fa971;
+	--status-warning: #f59e0b;
+	--status-error: #dc2626;
+
+	/* Typography */
+	--font-arabic: 'IBM Plex Arabic', sans-serif;
+	--font-latin: 'Inter', sans-serif;
+	
+	/* Spacing */
+	--spacing-xs: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 16px;
+	--spacing-lg: 24px;
+	--spacing-xl: 32px;
+	--spacing-2xl: 48px;
+	
+	/* Border Radius */
+	--radius-sm: 6px;
+	--radius-md: 10px;
+	--radius-lg: 14px;
+	
+	/* Shadows (Light Mode Only) */
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+	
+	/* Transitions */
+	--transition-fast: 150ms ease;
+	--transition-normal: 250ms ease;
+}
+
+[data-theme="dark"] {
+	/* Dark Theme */
+	--bg-main: #0b1220;
+	--bg-section: #111827;
+	--bg-card: #0f172a;
+	
+	--text-main: #e5e7eb;
+	--text-secondary: #cbd5e1;
+	--text-muted: #9ca3af;
+	--text-inverse: #0b1220;
+	
+	--border-default: #1f2937;
+	--border-subtle: #273449;
+	
+	--status-success: #22c55e;
+	--status-warning: #fbbf24;
+	--status-error: #ef4444;
+
+	/* No shadows in dark mode */
+	--shadow-sm: none;
+	--shadow-md: none;
+}
+
+/* Direction */
+[dir="rtl"] {
+	--direction: rtl;
+}
+
+[dir="ltr"] {
+	--direction: ltr;
+}
