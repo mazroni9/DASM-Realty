@@ -51,7 +51,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 export function useLanguage() {
 	const context = useContext(LanguageContext);
 	if (!context) {
-		throw new Error('useLanguage must be used within LanguageProvider');
+		// Fallback for SSG/SSR - return default Arabic
+		return {
+			language: 'ar' as Language,
+			setLanguage: () => {},
+			t: (key: keyof typeof translations.ar) => translations.ar[key] || ''
+		};
 	}
 	return context;
 }

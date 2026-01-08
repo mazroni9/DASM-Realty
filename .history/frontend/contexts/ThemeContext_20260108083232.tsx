@@ -64,12 +64,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 export function useTheme() {
 	const context = useContext(ThemeContext);
 	if (!context) {
-		// Fallback for SSG/SSR - return default light theme
-		return {
-			theme: 'light' as Theme,
-			setTheme: () => {},
-			toggleTheme: () => {}
-		};
+		throw new Error('useTheme must be used within ThemeProvider');
 	}
 	return context;
 }
