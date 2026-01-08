@@ -11,9 +11,9 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-	title: 'داسم للعقار — منصة المزادات الرقمية',
+	title: 'داسم للعقار | DASM Realty — Where Real Estate Meets Digital Auctions',
 	description:
-		'منصة داسم للعقار — حيث تلتقي العقارات بالمزادات الرقمية. واجهة عصرية للملاك، الوسطاء، والمستثمرين.'
+		'منصة عقارية احترافية لعرض وتسويق وبيع وتأجير الأصول العقارية، مع إمكانية التحويل الذكي إلى مزاد رقمي عبر محرك DASM‑e عند الحاجة. A professional real estate platform for listing, marketing, selling, and leasing properties, with smart conversion to digital auctions powered by DASM‑e when needed.'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

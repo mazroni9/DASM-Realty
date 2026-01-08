@@ -7,15 +7,21 @@ export function Hero() {
 		<section className="relative bg-hero-radial">
 			<div className="container container-padding grid grid-cols-1 lg:grid-cols-2 gap-10 py-14 lg:py-20">
 				<div className="order-2 lg:order-1">
-					<h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dasm-blue leading-tight">
-						<span className="text-dasm-green">داسم</span> للعقار — حيث تلتقي
-						<br className="hidden sm:block" /> العقارات بالمزادات الرقمية
-					</h1>
-					<p className="mt-4 text-slate-600 leading-8">
-						منصة عرض وتسويق عقاري احترافي، مرتبطة بمحرك مزادات
-						<span className="font-semibold"> DASM‑e</span> الرقمي. تمنح
-						الملاك والوسطاء والمستثمرين تجربة ذكية لبيع وشراء الأصول
-						العقارية بثقة وشفافية.
+					<div className="mb-2">
+						<h1 className="text-2xl sm:text-3xl font-bold text-dasm-blue">
+							داسم للعقار | DASM Realty
+						</h1>
+						<p className="text-sm text-slate-500 mt-1">Where Real Estate Meets Digital Auctions</p>
+					</div>
+					<h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-dasm-blue leading-tight mt-4">
+						حيث يلتقي العرض العقاري
+						<br className="hidden sm:block" /> بالمزادات الرقمية
+					</h2>
+					<p className="mt-4 text-slate-600 leading-8 text-lg">
+						منصة عقارية احترافية لعرض وتسويق وبيع وتأجير الأصول العقارية، مع إمكانية التحويل الذكي إلى مزاد رقمي عبر محرك DASM‑e عند الحاجة — شفافية أعلى، وصول أوسع، ونتائج عادلة.
+					</p>
+					<p className="mt-3 text-slate-500 leading-7 italic">
+						A professional real estate platform for listing, marketing, selling, and leasing properties, with smart conversion to digital auctions powered by DASM‑e when needed — higher transparency, wider reach, and fair market outcomes.
 					</p>
 					<div className="mt-6 flex flex-wrap gap-3">
 						<Link href="#cta" className="btn btn-primary">

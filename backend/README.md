@@ -1,62 +1,113 @@
-## Backend — Laravel API (Guide + Stubs)
+# Backend — Laravel API
 
-This folder contains a step-by-step guide and code stubs to set up a Laravel 11 (or 10) API-only backend for DASM Realty, with PostgreSQL and Cloudinary wired for future media.
+Laravel API backend for DASM Realty platform.
 
-### 1) Create the Laravel app
+## Setup Instructions
+
+### 1. Create Laravel Project
+
 ```bash
-cd backend
 composer create-project laravel/laravel laravel "^11.0"
+cd laravel
 ```
 
-Optional: You can use `--prefer-dist` to speed up installs.
+### 2. Install Dependencies
 
-### 2) Enter the app and install Cloudinary
 ```bash
-cd laravel
 composer require cloudinary-labs/cloudinary-laravel
 php artisan vendor:publish --provider="CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider"
 ```
 
-### 3) Configure `.env`
-Copy our preset env and adjust values:
+### 3. Copy Stubs to Laravel Project
+
+Copy all files from `backend/stubs/` to your Laravel project maintaining the same directory structure:
+
 ```bash
-cp ../stubs/.env.example .env
+# From project root
+cp -r backend/stubs/app/* backend/laravel/app/
+cp -r backend/stubs/config/* backend/laravel/config/
+cp -r backend/stubs/database/* backend/laravel/database/
+cp -r backend/stubs/routes/* backend/laravel/routes/
+cp backend/stubs/env.example.stub backend/laravel/.env.example
+```
+
+### 4. Configure Environment
+
+Copy `.env.example` to `.env`:
+
+```bash
+cp .env.example .env
 php artisan key:generate
 ```
-Fill:
-- `DB_CONNECTION=pgsql`
-- `DB_HOST/PORT/USERNAME/PASSWORD/DB_DATABASE`
-- `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
 
-### 4) Apply our stubs (routes, migration, controller, model)
-Copy files from `../stubs` into the Laravel app root (keep paths):
-```
-app/Http/Controllers/LeadController.php
-app/Models/Lead.php
-database/migrations/2026_01_01_000000_create_leads_table.php
-routes/api.php   (merge with existing or append our route)
-config/cors.php  (ensure Next.js origin is allowed)
+Edit `.env`:
+
+```env
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=dasm
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+
+FRONTEND_URL=http://localhost:3000
+VERCEL_URL=https://dasm-realty-dasme-projects.vercel.app
+
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
 ```
 
-### 5) Migrate and run
+### 5. Run Migrations
+
 ```bash
 php artisan migrate
+```
+
+### 6. Start Server
+
+```bash
 php artisan serve
 ```
-API runs at `http://127.0.0.1:8000`.
 
-### 6) Test lead creation
-```bash
-curl -X POST http://127.0.0.1:8000/api/leads \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Ahmed","email":"a@example.com","phone":"0500000","type":"seller","message":"أرغب ببيع عقاري"}'
+API will be available at: `http://127.0.0.1:8000`
+
+## API Endpoints
+
+### Health Check
+```
+GET /api/health
 ```
 
-### 7) Postgres via Docker (optional)
-Use our `docker-compose.yml` at the repo root or below to spin up Postgres quickly.
+### Create Lead
+```
+POST /api/leads
+Content-Type: application/json
 
-### Notes
-- CORS defaults allow `*` in local dev. Set `NEXT_PUBLIC_API_BASE_URL` in the frontend.
-- Cloudinary is ready but unused in the landing; it will be used for property images later.
+{
+  "name": "Ahmed Ali",
+  "email": "ahmed@example.com",
+  "phone": "0500000000",
+  "type": "seller",
+  "message": "أرغب ببيع عقاري"
+}
+```
 
+## CORS Configuration
 
+CORS is configured in `config/cors.php` to allow:
+- `http://localhost:3000` (local development)
+- `https://dasm-realty-dasme-projects.vercel.app` (Vercel production)
+- Any `*.vercel.app` domain
+
+## Database
+
+Uses PostgreSQL. Make sure Docker container is running:
+
+```bash
+docker compose up -d
+```
+
+## Cloudinary
+
+Cloudinary is configured for future image uploads. Set credentials in `.env`.

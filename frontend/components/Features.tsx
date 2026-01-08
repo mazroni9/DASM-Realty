@@ -4,19 +4,18 @@ import { Building, Users2, ShieldCheck, Sparkles, Wallet, CheckCircle2 } from 'l
 import { useState } from 'react';
 
 const officeFeatures = [
-	'عرض عقاري احترافي',
-	'قوالب تسويق جاهزة',
-	'تقارير أداء الحملة',
-	'ربط المزاد عند الطلب',
-	'لوحة تحكم للطلبات'
+	{ ar: 'لوحة تحكم لإدارة العقارات والعملاء', en: 'Property & client management dashboard' },
+	{ ar: 'استقبال وإدارة الطلبات (Leads)', en: 'Lead capture and tracking' },
+	{ ar: 'باقات اشتراك وتسويق مرنة', en: 'Flexible subscriptions and promotion' },
+	{ ar: 'إدخال عقارات للمزاد عند الحاجة', en: 'Auction enablement' },
+	{ ar: 'تقارير أداء وشفافية في العمولات', en: 'Performance reports & commission transparency' }
 ];
 
 const buyerFeatures = [
-	'معلومات دقيقة وشفافة',
-	'توثيق المزادات وعروض الشراء',
-	'إشعارات فورية',
-	'إجراءات موحدة',
-	'دعم فني سريع'
+	{ ar: 'تصفح عقارات موثوقة ومراجعة', en: 'Verified listings' },
+	{ ar: 'مقارنة الأسعار والخيارات بسهولة', en: 'Easy comparison' },
+	{ ar: 'دخول مزادات رقمية حقيقية', en: 'Real digital auctions' },
+	{ ar: 'تجربة شراء شفافة بلا تلاعب', en: 'Transparent purchase journey' }
 ];
 
 export function Features() {
@@ -28,7 +27,7 @@ export function Features() {
 					<div className="flex items-center gap-3">
 						<Building className="h-6 w-6 text-dasm-blue" />
 						<h2 className="text-2xl sm:text-3xl font-extrabold text-dasm-blue">
-							المميزات
+							{tab === 'office' ? 'مزايا للمكاتب العقارية | For Real Estate Offices' : 'مزايا للمشترين والمستثمرين | For Buyers & Investors'}
 						</h2>
 					</div>
 					<div className="inline-flex rounded-lg border p-1 bg-white shadow-sm">
@@ -70,10 +69,13 @@ export function Features() {
 							</h3>
 						</div>
 						<ul className="mt-4 space-y-3 text-slate-700">
-							{(tab === 'office' ? officeFeatures : buyerFeatures).map((f) => (
-								<li key={f} className="flex items-center gap-2">
-									<CheckCircle2 className="h-4 w-4 text-dasm-green flex-shrink-0" />
-									<span>{f}</span>
+							{(tab === 'office' ? officeFeatures : buyerFeatures).map((f, idx) => (
+								<li key={idx} className="flex items-start gap-2">
+									<CheckCircle2 className="h-4 w-4 text-dasm-green flex-shrink-0 mt-0.5" />
+									<div>
+										<span className="block">{f.ar}</span>
+										<span className="text-xs text-slate-500 italic">{f.en}</span>
+									</div>
 								</li>
 							))}
 						</ul>

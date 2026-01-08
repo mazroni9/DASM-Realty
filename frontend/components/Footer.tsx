@@ -10,10 +10,16 @@ export function Footer() {
 					<div className="space-y-4">
 						<div className="flex items-center gap-3">
 							<Image src="/logo-dasm-inv.svg" alt="DASM" width={36} height={36} />
-							<div className="font-extrabold text-lg">DASM Realty</div>
+							<div>
+								<div className="font-extrabold text-lg">داسم للعقار</div>
+								<div className="text-sm text-white/70">DASM Realty</div>
+							</div>
 						</div>
 						<p className="text-white/80 leading-7 text-sm">
-							منصة عقارية حديثة تربط العروض بالمزادات الرقمية بشفافية وثقة.
+							جزء من منظومة DASM‑e الرقمية
+						</p>
+						<p className="text-white/70 text-xs italic">
+							Part of the DASM‑e digital ecosystem
 						</p>
 						<p className="text-white/60 text-xs mt-4">
 							© {new Date().getFullYear()} DASM Realty. جميع الحقوق محفوظة.
