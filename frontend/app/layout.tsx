@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { IBM_Plex_Sans_Arabic, Inter } from 'next/font/google';
 import { clsx } from 'clsx';
 import { LanguageProvider } from '@/contexts/LanguageContext';
@@ -34,6 +35,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 						{children}
 					</LanguageProvider>
 				</ThemeProvider>
+				{/* DASM Talk widget — unified chat across the DASM ecosystem */}
+				<Script
+					src="https://talk.dasm.com.sa/widget.js"
+					strategy="afterInteractive"
+					data-dasm-source="realty"
+				/>
 			</body>
 		</html>
 	);
