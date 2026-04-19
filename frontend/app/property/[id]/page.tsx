@@ -9,6 +9,7 @@ import { PropertyDescription } from '@/components/property/PropertyDescription';
 import { PropertyMap } from '@/components/property/PropertyMap';
 import { OfficeInfo } from '@/components/property/OfficeInfo';
 import { AuctionStatus } from '@/components/property/AuctionStatus';
+import TalkPropertyContext from '@/components/TalkPropertyContext';
 
 // Mock data - In production, fetch from API
 const mockProperty = {
@@ -60,6 +61,7 @@ export default function PropertyPage({ params }: { params: { id: string } }) {
 	
 	return (
 		<div className="min-h-dvh">
+			<TalkPropertyContext propertyId={property.id} />
 			<Navbar />
 			<main>
 				<PropertyHero
